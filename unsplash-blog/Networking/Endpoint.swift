@@ -42,6 +42,10 @@ struct Endpoint<Response: Decodable>: APIEndpoint {
 /// Quick access endpoint
 extension Endpoint where Response == [Photo] {
     static var photos: Self {
-        Endpoint(path: UnsplashAPIPaths.photos.rawValue)
+        Endpoint(path: UnsplashAPIPaths.photos.rawValue, queryItems: [
+            // TODO: we can use this queries to load multiple pages while scrolling.
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "per_page", value: "24")
+        ])
     }
 }

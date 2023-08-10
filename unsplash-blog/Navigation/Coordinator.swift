@@ -10,10 +10,12 @@ import SwiftUI
 
 class Coordinator: ObservableObject {
     @Published var path = NavigationPath()
-    let apiClient: APIClient
+    private let apiClient: APIClient
+    private let photoListViewModel: PhotoListViewModel
     
     init(apiClient: APIClient) {
         self.apiClient = apiClient
+        self.photoListViewModel = PhotoListViewModel(apiClient: apiClient)
     }
     
     func push(page: Page) {
@@ -28,8 +30,7 @@ class Coordinator: ObservableObject {
     func build(page: Page) -> some View {
         switch page {
         case .home:
-            let viewModel = PhotoListViewModel(apiClient: apiClient)
-            PhotoListView(viewModel: viewModel)
+            PhotoListView(viewModel: photoListViewModel)
         case .photoDetail(let photo):
             PhotoDetailsView(photo: photo)
         }
