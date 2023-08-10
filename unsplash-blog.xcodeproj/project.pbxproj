@@ -14,6 +14,10 @@
 		5F2DC2802A84C9A5000EB969 /* unsplash_blogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC27F2A84C9A5000EB969 /* unsplash_blogTests.swift */; };
 		5F2DC28A2A84C9A5000EB969 /* unsplash_blogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC2892A84C9A5000EB969 /* unsplash_blogUITests.swift */; };
 		5F2DC28C2A84C9A5000EB969 /* unsplash_blogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC28B2A84C9A5000EB969 /* unsplash_blogUITestsLaunchTests.swift */; };
+		5F2DC2992A84CA60000EB969 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC2982A84CA60000EB969 /* EndpointTests.swift */; };
+		5F2DC29E2A84CF0C000EB969 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC29D2A84CF0C000EB969 /* Photo.swift */; };
+		5F2DC2A02A84CF3A000EB969 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC29F2A84CF3A000EB969 /* Endpoint.swift */; };
+		5F2DC2A22A84D131000EB969 /* APIPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC2A12A84D131000EB969 /* APIPaths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		5F2DC2852A84C9A5000EB969 /* unsplash-blogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "unsplash-blogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2DC2892A84C9A5000EB969 /* unsplash_blogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplash_blogUITests.swift; sourceTree = "<group>"; };
 		5F2DC28B2A84C9A5000EB969 /* unsplash_blogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplash_blogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5F2DC2982A84CA60000EB969 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		5F2DC29D2A84CF0C000EB969 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		5F2DC29F2A84CF3A000EB969 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5F2DC2A12A84D131000EB969 /* APIPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPaths.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,8 @@
 		5F2DC26D2A84C99D000EB969 /* unsplash-blog */ = {
 			isa = PBXGroup;
 			children = (
+				5F2DC29C2A84CED8000EB969 /* Models */,
+				5F2DC29B2A84CECF000EB969 /* Networking */,
 				5F2DC26E2A84C99D000EB969 /* unsplash_blogApp.swift */,
 				5F2DC2702A84C99D000EB969 /* ContentView.swift */,
 				5F2DC2722A84C9A4000EB969 /* Assets.xcassets */,
@@ -113,6 +123,7 @@
 		5F2DC27E2A84C9A5000EB969 /* unsplash-blogTests */ = {
 			isa = PBXGroup;
 			children = (
+				5F2DC29A2A84CA69000EB969 /* Networking */,
 				5F2DC27F2A84C9A5000EB969 /* unsplash_blogTests.swift */,
 			);
 			path = "unsplash-blogTests";
@@ -125,6 +136,31 @@
 				5F2DC28B2A84C9A5000EB969 /* unsplash_blogUITestsLaunchTests.swift */,
 			);
 			path = "unsplash-blogUITests";
+			sourceTree = "<group>";
+		};
+		5F2DC29A2A84CA69000EB969 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5F2DC2982A84CA60000EB969 /* EndpointTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5F2DC29B2A84CECF000EB969 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5F2DC29F2A84CF3A000EB969 /* Endpoint.swift */,
+				5F2DC2A12A84D131000EB969 /* APIPaths.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5F2DC29C2A84CED8000EB969 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F2DC29D2A84CF0C000EB969 /* Photo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2DC29E2A84CF0C000EB969 /* Photo.swift in Sources */,
 				5F2DC2712A84C99D000EB969 /* ContentView.swift in Sources */,
+				5F2DC2A22A84D131000EB969 /* APIPaths.swift in Sources */,
+				5F2DC2A02A84CF3A000EB969 /* Endpoint.swift in Sources */,
 				5F2DC26F2A84C99D000EB969 /* unsplash_blogApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2DC2992A84CA60000EB969 /* EndpointTests.swift in Sources */,
 				5F2DC2802A84C9A5000EB969 /* unsplash_blogTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
