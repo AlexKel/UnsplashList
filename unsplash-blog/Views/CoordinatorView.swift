@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoordinatorView: View {
-    @StateObject private var coordinator = Coordinator()
+    @StateObject private var coordinator = Coordinator(apiClient: URLSession.shared)
     
     var body: some View {
         NavigationStack(path: $coordinator.path) {

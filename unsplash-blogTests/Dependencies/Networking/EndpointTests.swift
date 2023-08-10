@@ -11,8 +11,8 @@ import XCTest
 final class EndpointTests: XCTestCase {
     
     func testEndpointComponents() throws {
-        let endpoint = Endpoint<Photo>(clientID: "TestClientID", path: UnsplashAPIPaths.photos.rawValue)
-        let comps = endpoint.createComponents()
+        let endpoint = Endpoint<Photo>(path: UnsplashAPIPaths.photos.rawValue)
+        let comps = endpoint.createComponents(clientID: "TestClientID")
         XCTAssertEqual(comps.scheme, "https")
         XCTAssertEqual(comps.host, "api.unsplash.com")
         XCTAssertEqual(comps.path, "/photos")
@@ -21,8 +21,8 @@ final class EndpointTests: XCTestCase {
     }
     
     func testEndpointRequest() throws {
-        let endpoint = Endpoint<Photo>(clientID: "TestClientID", path: UnsplashAPIPaths.photos.rawValue)
-        let request = endpoint.createRequest()
+        let endpoint = Endpoint<Photo>(path: UnsplashAPIPaths.photos.rawValue)
+        let request = endpoint.createRequest(clientID: "TestClientID")
         XCTAssertNotNil(request)
         XCTAssertEqual(request?.httpMethod, "GET")
         XCTAssertEqual(request?.url?.absoluteString, "https://api.unsplash.com/photos?client_id=TestClientID")

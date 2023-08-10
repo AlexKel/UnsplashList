@@ -9,21 +9,19 @@ import Foundation
 
 /// Protocol of an endpoint
 protocol APIEndpoint {
-    var clientID: String { get set }
     var path: String { get set }
     var queryItems: [URLQueryItem] { get set }
-    func createComponents() -> URLComponents
-    func createRequest() -> URLRequest?
+    func createComponents(clientID: String) -> URLComponents
+    func createRequest(clientID: String) -> URLRequest?
 }
 
 // Default implementation
 struct Endpoint<Response: Decodable>: APIEndpoint {
-    var clientID: String
     var path: String
     var queryItems: [URLQueryItem] = []
     private var host: String { "api.unsplash.com" }
     
-    func createComponents() -> URLComponents {
+    func createComponents(clientID: String) -> URLComponents {
         var components = URLComponents()
         components.scheme = "https"
         components.host = host
@@ -33,8 +31,8 @@ struct Endpoint<Response: Decodable>: APIEndpoint {
         return components
     }
     
-    func createRequest() -> URLRequest? {
-        guard let url = createComponents().url else {
+    func createRequest(clientID: String) -> URLRequest? {
+        guard let url = createComponents(clientID: clientID).url else {
             return nil
         }
         return URLRequest(url: url)
@@ -43,7 +41,7 @@ struct Endpoint<Response: Decodable>: APIEndpoint {
 
 /// Quick access endpoint
 extension Endpoint where Response == [Photo] {
-    static func photos(clientID: String) -> Self {
-        Endpoint(clientID: clientID, path: UnsplashAPIPaths.photos.rawValue)
+    static var photos: Self {
+        Endpoint(path: UnsplashAPIPaths.photos.rawValue)
     }
 }

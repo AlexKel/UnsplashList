@@ -11,7 +11,7 @@ import SwiftUI
 struct unsplash_blogApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoordinatorView()
         }
     }
 }

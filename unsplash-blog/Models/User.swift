@@ -12,3 +12,9 @@ struct User: Codable, Identifiable {
     var name: String
     var profileImage: ProfileImage
 }
+
+extension User: Stubbable {
+    static var stub: User {
+        User(id: "TestUser", name: "Test Testerson", profileImage: ProfileImage.stub)
+    }
+}
