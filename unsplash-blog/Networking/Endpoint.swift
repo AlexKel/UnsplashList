@@ -40,3 +40,10 @@ struct Endpoint<Response: Decodable>: APIEndpoint {
         return URLRequest(url: url)
     }
 }
+
+/// Quick access endpoint
+extension Endpoint where Response == [Photo] {
+    static func photos(clientID: String) -> Self {
+        Endpoint(clientID: clientID, path: UnsplashAPIPaths.photos.rawValue)
+    }
+}
